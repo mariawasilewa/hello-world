@@ -13,16 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install git-secrets
-        run: |
-          git clone https://github.com/awslabs/git-secrets.git
-          cd git-secrets
-          make install
-
-      - name: Run git-secrets
-        run: |
-          git secrets --add 'DOCKER_HUB_ACCESS_TOKEN'
-          git secrets --scan
+      - name: Run Detect-Secrets
+        uses: robertstettner/drone-detect-secrets@v1.1.0
+        with:
+          exclude-files: '.github/workflows,.gitignore'
+          scan-all-files: true
 
       - name: Install cli-markdown
         run: npm i -g cli-markdown
