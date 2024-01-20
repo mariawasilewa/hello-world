@@ -9,10 +9,10 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Hello Github'
-    }
-  }
-}
+      msg: 'Hello Github',
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
