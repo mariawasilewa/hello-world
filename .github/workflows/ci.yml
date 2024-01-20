@@ -16,8 +16,8 @@ jobs:
       - name: Run Detect-Secrets
         uses: zricethezav/gitleaks-action@v2.0.1
         with:
-          exclude-files: '.github/workflows,.gitignore'
           scan-all-files: true
+          additional-flags: '--verbose'
 
       - name: Install cli-markdown
         run: npm i -g cli-markdown
