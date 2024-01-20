@@ -13,9 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Check Markdown links
-      uses: gaurav-nelson/github-action-markdown-link-check@v1
-      
+    - name: Install cli-markdown
+      run: npm i -g cli-markdown
+
+    - name: Check Markdown
+      run: md README.md
+
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
