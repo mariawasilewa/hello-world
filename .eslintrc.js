@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:vue/essential", "google"],
+  extends: ["plugin:vue/essential", "google", "plugin:prettier/recommended"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
@@ -11,6 +11,6 @@ module.exports = {
   plugins: ["vue"],
   rules: {
     "vue/no-multiple-template-root": "off",
-    quotes: ["error", "double"]
+    quotes: ["error", "double"],
   },
 };
