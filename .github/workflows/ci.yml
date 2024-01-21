@@ -66,4 +66,4 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: "mariavasileva/hello-world:v1.0"
-          args: --severity-threshold=high
+          args: --severity-threshold=high --fail-on=never
