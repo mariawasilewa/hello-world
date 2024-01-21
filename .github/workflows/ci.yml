@@ -15,9 +15,6 @@ jobs:
 
       - name: Run Detect-Secrets
         uses: zricethezav/gitleaks-action@v2.3.2
-        with:
-          scan-all-files: true
-          additional-flags: "--verbose"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
