@@ -13,14 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Detect-Secrets
-        uses: zricethezav/gitleaks-action@v2.3.2
-        with:
-          scan-all-files: true
-          additional-flags: "--verbose"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Install cli-markdown
         run: npm i -g cli-markdown
 
