@@ -57,3 +57,11 @@ jobs:
           context: .
           push: true
           tags: mariavasileva/hello-world:v1.0
+
+      - name: Scan image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: 'mariavasileva/hello-world:v1.0'
+          args: --severity-threshold=high    
