@@ -50,13 +50,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: mariavasileva/hello-world:v1.0
+          tags: mariavasileva/hello-world:${{ github.sha }}
 
       - name: Scan image for vulnerabilities
         uses: snyk/actions/docker@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: "mariavasileva/hello-world:v1.0"
+          image: "mariavasileva/hello-world:${{ github.sha }}"
           args: --severity-threshold=high
         continue-on-error: true
