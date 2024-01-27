@@ -1,0 +1,22 @@
+name: 'Snyk Scan'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 1 * *' # At 4:00 AM on the 1st of each month
+
+jobs:
+  snyk_scan:
+    name: SnykScan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Run Snyk to check Docker image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          image: "mariavasileva/hello-world:${{ github.sha }}"
+          args: --severity-threshold=high
+        continue-on-error: true
