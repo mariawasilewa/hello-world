@@ -1,44 +1,19 @@
-# This is a basic workflow that is manually triggered to generate a release
-
 name: Create Release Branch
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
     inputs:
-      branchname:
-        # Friendly description to be shown in the UI instead of 'branchname'
-        description: "Enter Release Branch Name (ex: 3.2 or 3.2.1)"
-        # Input has to be provided for the workflow to run
+      version:
+        description: 'Enter Release Branch Name (ex: 3.2 or 3.2.1)'
         required: true
-  workflow_call:
 
 jobs:
-  create-release-branch:
-    runs-on: ubuntu-22.04
-
+  create:
+    runs-on: ubuntu-latest
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_PAT_SERVICE_ACCT }}
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Setup Git
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git --version
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git status
-
-      - name: Create Release Branch
-        run: |
-          git checkout -b ${{ github.event.inputs.branchname }}
-
-      - name: Push New Release Branch to Origin
-        run: |
-          git push --set-upstream origin ${{ github.event.inputs.branchname }}
-          git status
+    - name: Create Release Branch
+      run: |
+        git checkout -b release/${{ github.event.inputs.version }}
+        git push origin release/${{ github.event.inputs.version }}
