@@ -1,9 +1,9 @@
-name: 'Snyk Scan'
+name: "Snyk Scan"
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 4 1 * *' # At 4:00 AM on the 1st of each month
+    - cron: "0 4 1 * *" # At 4:00 AM on the 1st of each month
 
 jobs:
   snyk_scan:
