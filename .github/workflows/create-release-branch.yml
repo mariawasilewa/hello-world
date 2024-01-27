@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_PAT_SERVICE_ACCT }}
+          token: ${{ secrets.RELEASE_BRANCH_CREATION_TOKEN }}
 
       - name: Create Release Branch
         run: |
