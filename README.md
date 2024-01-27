@@ -37,12 +37,7 @@ The application is designed to be deployed on a Kubernetes cluster. The deployme
 
 The project also includes a unit test for the "Hello World" page. The test is run as part of the GitHub Actions workflow. The project uses ESLint and Prettier for code formatting and linting, and the README file is checked with cli-markdown.
 
-
-
-
-
 Regenerate
-
 
 Model
 gpt-4
@@ -51,7 +46,6 @@ Plugins
 [object Object] logo
 
 Save As Preset
-
 
 Completion Model (Recommended: GPT-4)
 gpt-4
