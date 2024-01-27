@@ -3,17 +3,17 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Enter Release Branch Name (ex: 3.2 or 3.2.1)'
+        description: "Enter Release Branch Name (ex: 3.2 or 3.2.1)"
         required: true
 
 jobs:
   create:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Create Release Branch
-      run: |
-        git checkout -b release/${{ github.event.inputs.version }}
-        git push origin release/${{ github.event.inputs.version }}
+      - name: Create Release Branch
+        run: |
+          git checkout -b release/${{ github.event.inputs.version }}
+          git push origin release/${{ github.event.inputs.version }}
