@@ -35,4 +35,4 @@ The project includes a GitHub Actions workflow for continuous integration and de
 
 The application is designed to be deployed on a Kubernetes cluster. The deployment.yaml and service.yaml files define a Deployment and a Service for the application. The Deployment creates three replicas of the application and the Service exposes it on port 80. The Docker image used in the Deployment is mariavasileva/hello-world:v1.0.
 
-The project also includes a unit test for the "Hello World" page. The test is run as part of the GitHub Actions workflow. The project uses ESLint and Prettier for code formatting and linting, and the README file is checked with cli-markdown.
+The project also includes a unit test for the "Hello World" page. The test is run as part of the GitHub Actions workflow. The project uses ESLint and Prettier for code formatting and linting, and the README file is checked with cli-markdown. 
