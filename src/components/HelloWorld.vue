@@ -19,6 +19,6 @@ export default {
 <style scoped>
 .hello {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 </style>
