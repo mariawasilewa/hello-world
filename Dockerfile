@@ -1,5 +1,5 @@
 FROM node:21.6-bookworm-slim
-WORKDIR /app
+WORKDIR /hello-world
 COPY package*.json ./
 RUN npm install
 COPY . .
