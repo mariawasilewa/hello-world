@@ -1,4 +1,4 @@
-FROM node:21.6-bookworm-slim
+FROM node:21.7.3-bookworm-slim
 WORKDIR /hello-world
 COPY package*.json ./
 RUN npm install
